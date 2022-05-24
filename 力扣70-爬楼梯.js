@@ -1,4 +1,5 @@
 //爬到第n级台阶的方法等于爬到第n-1级和n-2级台阶的方法之和
+//本题其实就是一个求解斐波那契数列指定项值的问题
 var climbStairs = function(n) {
     if (n === 1) {
         return 1
