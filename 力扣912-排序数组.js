@@ -19,3 +19,5 @@ var sortArray = function(nums) {
     }
     return sortArray(left).concat(pivotValue,sortArray(right))
 };
+
+//该排序方法会不断开辟新的空间来存储分类后的数组，当对空间复杂度有要求的时候最好让数组进行原地排序（交换顺序）
