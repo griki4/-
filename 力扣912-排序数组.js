@@ -36,3 +36,36 @@ var sortArray = function(nums) {
     }
     return nums
 };
+
+/*3.简单选择排序
+*  每一轮都挑选出待排序数组中的最小的一个放入数组最前方*/
+var sortArray = function(nums) {
+    for (let i = 0; i < nums.length; i++) {
+        let min = Infinity
+        let minIndex
+        for (let j = i; j < nums.length; j++){
+            if (nums[j] < min){
+                min = nums[j]
+                minIndex = j
+            }
+        }
+        [nums[i], nums[minIndex]] = [nums[minIndex], nums[i]]
+    }
+    return nums
+}
+
+/*4.插入排序
+*   依次从无序数组中取出元素，放到有序数组的对应位置
+*   根据从无序数组中取出的元素的大小确定其放在有序数组中的位置*/
+var sortArray = function(nums) {
+    for (let i = 1; i <nums.length; i++){
+        let temp = nums[i]
+        let j = i - 1
+        for (; j >= 0; j--){
+            if (temp >= nums[j]) break;
+            nums[j + 1] = nums[j]
+        }
+        nums[j + 1] = temp
+    }
+    return nums
+}
