@@ -18,7 +18,9 @@ var moveZeroes = function(nums) {
 
 
 //2.双指针，右指针指向非零元素的时候直接交换两个指针所指的元素
-//如此一来，左指针和右指针之间就都是0了
+/*  快指针去寻找不为0的元素，将它们的指交给慢指针同时将自己所指元素变成0，
+    慢指针从数组开头开始，将所有不为0的元素依次添加到数组中
+    最后的效果就是数组前面都是非零元素，后面则都是0*/
 var moveZeroes = function(nums) {
     let j = 0
     for (let i = 0; i < nums.length; i++) {
@@ -27,4 +29,5 @@ var moveZeroes = function(nums) {
             j++
         }
     }
+    return nums
 }
